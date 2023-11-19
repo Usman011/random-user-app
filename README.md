@@ -24,6 +24,12 @@ Make sure to use same versions for development, CICD, deployment.
 
 - **Google Maps:** Displayed the user's location on a map using the google map embedUrl created from the Random User API..
 
+## Env Variables
+
+```shell
+VITE_GOOGLE_MAP_API_KEY
+```
+
 ## Developer Setup
 
 ```shell
