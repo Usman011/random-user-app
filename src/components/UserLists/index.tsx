@@ -1,9 +1,7 @@
-import { Box, Button, Grid, Typography, styled } from '@mui/material';
-import { useNavigate } from 'react-router';
-import { User, UserListsProps } from './types';
-import { Centered } from 'components/layout';
-
-
+import { Box, Button, Grid, Typography, styled } from "@mui/material";
+import { useNavigate } from "react-router";
+import { User, UserListsProps } from "./types";
+import { Centered } from "components/layout";
 
 const UserLists: React.FC<UserListsProps> = ({ data }) => {
   const navigate = useNavigate();
@@ -14,8 +12,8 @@ const UserLists: React.FC<UserListsProps> = ({ data }) => {
     <>
       <Grid container spacing={3} mt={2}>
         {data &&
-          data.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+          data.map((item) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={item.login.uuid}>
               <CardBox>
                 <Centered>
                   <StyledImg src={item.picture.large} alt="profile img" />

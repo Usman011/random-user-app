@@ -19,11 +19,14 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [limit, setLimit] = useState("4");
   const [gender, setGender] = useState<string>("male");
+
   const { data, error, isFetching, isPlaceholderData } = useQuery({
     queryKey: ["projects", currentPage, gender, limit],
     queryFn: () => getUserList({ currentPage, gender, limit }),
     placeholderData: keepPreviousData,
+    staleTime: 15000,
   });
+  
   const handleChange = (page: number) => {
     setCurrentPage(page);
   };
